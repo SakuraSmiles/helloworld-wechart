@@ -1,0 +1,16 @@
+.bg{
+  height: 100%;
+  padding-top: 0rpx;
+  position: fixed;
+  background-color: #111111
+}
+.logo{
+  width: 400rpx;
+  height: 100rpx;
+  background-color: #111111;
+  margin: 400rpx 220rpx;
+}
+.logo-img{
+  width: 294rpx;
+  height:124.5rpx;
+}

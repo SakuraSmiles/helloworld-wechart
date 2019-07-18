@@ -1,0 +1,8 @@
+{
+  "disableScroll": true,
+  "usingComponents": {
+    "panel": "../../utils/panel/panel",
+    "wemark": "../../utils/wemark/wemark",
+    "userMsg":"../components/user-message/user-message"
+  }
+}

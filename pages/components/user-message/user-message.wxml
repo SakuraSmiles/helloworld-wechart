@@ -1,0 +1,23 @@
+<view class='user-message'>
+  <view class='userImg' bindtap="toWelcome">
+    <!--右上边框-->
+    <view class="t_line_box">
+      <icon class="t_r_line"></icon>
+      <icon class="r_t_line"></icon>
+    </view>
+    <!--左下边框-->
+    <view class="t_line_box">
+      <icon class="l_b_line"></icon>
+      <icon class="b_l_line"></icon>
+    </view>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+  </view>
+  <view class='userText'>
+    <view class='userName'>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </view>
+    <view class='tips'>
+      <text class="tips-text">请先绑定激活码正常启用功能</text>
+    </view>
+  </view>
+</view>

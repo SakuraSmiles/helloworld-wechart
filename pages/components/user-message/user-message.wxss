@@ -1,0 +1,81 @@
+.user-message{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 470rpx;
+  margin: 30rpx;
+}
+.userImg{
+  width: 132rpx;
+  height: 132rpx;
+  box-sizing: border-box;
+  border: 2rpx solid #2C58A6;
+  box-shadow: 0 0 10rpx #2C58A6;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+}
+.userText{
+  display: flex;
+  flex-direction: column;
+  height: 140rpx;
+  width: 300rpx;
+}
+.userName{
+  margin-left: 30rpx;
+  padding: 0;
+  line-height: 110rpx;
+  width: 100%;
+  font-size: 22pt;
+  color: #eee;
+  text-shadow: 0px 0px 15rpx #4788fb;
+}
+.tips{
+  margin-left: 30rpx;
+  padding: 0;
+  height: 30rpx;
+  width: 100%;
+  line-height: 30rpx;
+  font-size: 20rpx;
+  color: #eee;
+  text-shadow: 0px 0px 15rpx #4788fb;
+}
+.userinfo-nickname,
+.tips-text{
+  text-overflow:ellipsis;
+}
+.t_line_box {
+    position: absolute;
+    width: 132rpx;
+    height: 132rpx;
+}
+.t_line_box icon{
+    background-color: #4788fb;
+    box-shadow: 0px 0px 10rpx #4788fb;
+    position: absolute;
+}
+.t_r_line{
+    height: 2px;
+    width: 16px;
+    right: 0px;
+    top: -1px;
+}
+.r_t_line{
+    width: 2px;
+    height: 24px;
+    right: 0px;
+    top: -1px;
+}
+.l_b_line{
+    width: 2px;
+    height: 24px;
+    left: -1px;
+    bottom: 0px;
+}
+.b_l_line{
+    height: 2px;
+    width: 16px;
+    left: -1px;
+    bottom: 0px;
+}

@@ -1,0 +1,5 @@
+<view class='bg'>
+  <view animation="{{show}}" class='logo'>
+  <image src="/images/welcome/title_white48.png" mode="aspectFix" class="logo-img"></image>
+  </view>
+</view>

@@ -1,0 +1,21 @@
+<view class='bg' wx:if="{{canIUse}}">
+  <panel id="main"></panel>
+  <view class='top'>
+    <button wx:if="{{!hasUserInfo && canIUse}}" class="confirm-btn" open-type="getUserInfo" bindgetuserinfo='login'>
+      <text>授权使用</text>
+    </button>
+    <view wx:else class='userInfo' bindtouchstart='touchStart' bindtouchmove='touchMove' bindtouchend='touchEnd' animation='{{topAnimation}}'>
+      <userMsg userInfo='{{userInfo}}'></userMsg>
+      <view class='levelBox'>
+        <canvas class="levelBg" canvas-id="levelBg"> </canvas>
+        <view class='levelText'>{{levelText}}</view>
+      </view>
+    </view>
+  </view>
+  <view animation='{{centerAnimation}}' class='center'>
+    <scroll-view class='msgArea' scroll-y='true'>
+      <wemark md="{{markdown}}" type="wemark"></wemark>
+    </scroll-view>
+  </view>
+</view>
+<view wx:else>请升级微信版本</view>

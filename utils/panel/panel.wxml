@@ -1,0 +1,22 @@
+<view class="panel" >
+ <!--左上边框-->
+  <view class="t_line_box">
+    <icon class="t_l_line"></icon> 
+    <icon class="l_t_line"></icon> 
+  </view> 
+  <!--右上边框-->
+  <view class="t_line_box">
+    <icon class="t_r_line"></icon> 
+    <icon class="r_t_line"></icon> 
+  </view> 
+  <!--左下边框-->
+  <view class="t_line_box">
+    <icon class="l_b_line"></icon> 
+    <icon class="b_l_line"></icon> 
+  </view> 
+  <!--右下边框-->
+  <view class="t_line_box">
+    <icon class="r_b_line"></icon> 
+    <icon class="b_r_line"></icon> 
+  </view> 
+</view>
