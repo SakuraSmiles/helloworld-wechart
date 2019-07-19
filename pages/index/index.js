@@ -1,5 +1,5 @@
 // pages/welcome/welcome.js
-const markdown = require('./demo.md');
+const markdown = require('./notice');
 const app = getApp();
 Page({
   data: {
@@ -10,9 +10,10 @@ Page({
     touchS: [0, 0],
     touchE: [0, 0],
     type: 'index',
-    centerAnimation:null,
+    noticeAnimation:null,
     topAnimation:null,
-    levelText: '未激活'
+    levelText: '未激活',
+    userContentAnimation:null
   },
   login: function (userInfos) {
     var that = this;
@@ -79,7 +80,9 @@ Page({
     const _this = this;
     let start = this.data.touchS
     let end = this.data.touchE
-    var animation = wx.createAnimation({});
+    var animation1 = wx.createAnimation({});
+    var animation2 = wx.createAnimation({});
+    var animation3 = wx.createAnimation({});
     if (start[0] < end[0] - 50) {
       console.log('右滑')
     } else if (start[0] > end[0] + 50) {
@@ -88,17 +91,20 @@ Page({
     } else if (start[1] > end[1] + 50) {
       console.log('上滑');
       if (this.data.type == 'activeCode') {
-        //this.backTop(animation);
-        this.showCenter(animation);
+        this.backTop(animation1);
+        this.hideUserContent(animation2);
+        this.showNotice(animation3);
         this.setData({
-          type: 'index'
+          type: 'index',
+          isShowUserContent: false
         });
       }
     } else if (start[1] < end[1] - 50) {
       console.log('下滑')
       if (this.data.type == 'index') {
-        this.hideCenter(animation);
-        // this.enlargeTop(animation);
+        this.hideNotice(animation3);
+        this.showUserContent(animation2);
+        this.enlargeTop(animation1);
         this.setData({
           type: 'activeCode'
         });
@@ -107,29 +113,50 @@ Page({
       console.log('静止')
     }
   },
-  hideCenter: function (animation){
+  hideUserContent: function (animation) {
     var _this = this;
-    animation.opacity(0).translateY(190).step({
+    animation.opacity(0).height('0rpx').step({
       duration: 1200,
       timingFunction: 'ease'
     });
     _this.setData({
-      centerAnimation: animation.export()
+      userContentAnimation: animation.export()
     });
   },
-  showCenter: function (animation) {
+  showUserContent: function (animation) {
     var _this = this;
-    animation.opacity(1).height('67%').translateY(0).step({
+    animation.opacity(0).height('800rpx').step({
+      delay:200,
       duration: 1200,
       timingFunction: 'ease'
     });
     _this.setData({
-      centerAnimation: animation.export()
+      userContentAnimation: animation.export()
+    });
+  },
+  hideNotice: function (animation){
+    var _this = this;
+    animation.opacity(0).step({
+      duration: 1200,
+      timingFunction: 'ease'
+    });
+    _this.setData({
+      noticeAnimation: animation.export()
+    });
+  },
+  showNotice: function (animation) {
+    var _this = this;
+    animation.opacity(1).height('67%').step({
+      duration: 1200,
+      timingFunction: 'ease'
+    });
+    _this.setData({
+      noticeAnimation: animation.export()
     });
   },
   enlargeTop: function (animation) {
     var _this = this;
-    animation.opacity(1).height(490).step({
+    animation.opacity(1).height('94%').step({
       duration: 1200,
       timingFunction: 'ease'
     });
@@ -139,7 +166,8 @@ Page({
   },
   backTop: function (animation) {
     var _this = this;
-    animation.opacity(1).height(290).step({
+    animation.opacity(1).height('300rpx').step({
+      delay:200,
       duration: 1200,
       timingFunction: 'ease'
     });

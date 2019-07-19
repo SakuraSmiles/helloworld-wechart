@@ -21,7 +21,7 @@
 .wemark_block_h3{
 	font-size:36rpx;
 	margin-top: 1em;
-	margin-bottom: 1em;
+	margin-bottom: 0.5em;
 }
 .wemark_block_h4,
 .wemark_block_h5{

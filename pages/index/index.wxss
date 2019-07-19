@@ -25,11 +25,19 @@
 }
 .top{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   padding: 0;
   margin: 3% 3% 0 3%;
   height: 300rpx;
+}
+.loginBtn{
+  display: flex;
+  flex-direction: flow;
+  align-items: center;
+  width: 90%;
+  height:90%;
 }
 .userInfo{
   padding: 0;
@@ -61,8 +69,15 @@
     font-size: 16px;
     color: rgb(128, 0, 0);
 }
-
-.center{
+.userContent{
+  width: 94%;
+  height: 0rpx;
+  padding: 0;
+  margin:0 3% 0 3%;
+  opacity: 0;
+  background-color: rebeccapurple;
+}
+.notice{
   width: 94%;
   height: 67%;
   padding: 0;
